@@ -12,9 +12,15 @@ export async function GET(
 
         const user = await prisma.user.findUnique({
             where: { id: userId },
-            include: {
+            select: {
+                id: true,
+                name: true,
+                website: true,
+                embedColor: true,
+                embedArrow: true,
+                embedCustomColor: true,
                 connections: {
-                    include: {
+                    select: {
                         toUser: {
                             select: {
                                 id: true,
@@ -24,15 +30,6 @@ export async function GET(
                         }
                     }
                 }
-            },
-            select: {
-                id: true,
-                name: true,
-                website: true,
-                embedColor: true,
-                embedArrow: true,
-                embedCustomColor: true,
-                connections: true,
             }
         });
 
