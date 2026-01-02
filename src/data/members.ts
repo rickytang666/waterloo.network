@@ -85,6 +85,9 @@ export const members: Member[] = [
     program: "Computer Science",
     year: "2030",
     profilePic: "/photos/daniel-ching.png",
+    instagram: "https://www.instagram.com/daniel_cwq/",
+    twitter: "https://x.com/danielchingwq",
+    linkedin: "https://www.linkedin.com/in/danching/",
     connections: ["shayaan-azeem"],
   },
   {
