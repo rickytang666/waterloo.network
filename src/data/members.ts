@@ -50,7 +50,7 @@ export const members: Member[] = [
   // ============================================
   // ADD YOUR ENTRY BELOW THIS LINE
   // ============================================
-  
+
   // Example entry (copy this as a template):
   // {
   //   id: "john-doe",
@@ -77,7 +77,6 @@ export const members: Member[] = [
     linkedin: "https://linkedin.com/in/shayaan-azeem",
     connections: ["daniel-ching", "fiona-cai"],
   },
-
   {
     id: "daniel-ching",
     name: "Daniel Ching",
@@ -89,6 +88,17 @@ export const members: Member[] = [
     twitter: "https://x.com/danielchingwq",
     linkedin: "https://www.linkedin.com/in/danching/",
     connections: ["shayaan-azeem"],
+  },
+  {
+    id: "kevin-thomas",
+    name: "Kevin Thomas",
+    website: "https://kevinjosethomas.com",
+    program: "Computer Science",
+    profilePic: "/photos/kevin-thomas.png",
+    instagram: "https://instagram.com/kevinjosethomas",
+    twitter: "https://x.com/kevinjosethomas",
+    linkedin: "https://linkedin.com/in/kevinjosethomas",
+    connections: ["shayaan-azeem", "daniel-ching"],
   },
   {
     id: "fiona-cai",
