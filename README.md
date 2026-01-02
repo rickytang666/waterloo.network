@@ -37,14 +37,14 @@ Optional fields: `program`, `year`, `instagram`, `twitter`, `linkedin` (use full
 
 ```html
 <script 
-  src="https://uwaterloo.network/embed.js" 
+  src="https://uwaterloonetwork.vercel.app/embed.js" 
   data-webring
   data-user="your-name"
 ></script>
 ```
 
 **What it does:**
-- Center icon → links to uwaterloo.network
+- Center icon → links to [uwaterloonetwork.vercel.app](https://uwaterloonetwork.vercel.app)
 - Arrows → open your connections' websites
 
 **Customize:** Add `data-color="red"` or `data-arrow="chevron"` for different styles.
