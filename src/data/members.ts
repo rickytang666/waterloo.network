@@ -70,7 +70,6 @@ export const members: Member[] = [
     name: "Shayaan Azeem",
     website: "https://shayaanazeem.com",
     program: "Applied Math",
-    year: "2030",
     profilePic: "/photos/shayaan-azeem.jpg",
     instagram: "https://instagram.com/shayaan.azeem",
     twitter: "https://x.com/shayaan_azeem",
