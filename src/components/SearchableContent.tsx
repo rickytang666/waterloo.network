@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Member, Connection } from '@/data/members';
 import MembersTable from './MembersTable';
 import NetworkGraph from './NetworkGraph';
@@ -24,9 +24,12 @@ interface SearchableContentProps {
 
 export default function SearchableContent({ members, connections }: SearchableContentProps) {
     const [searchQuery, setSearchQuery] = useState('');
+    const [shuffledMembers, setShuffledMembers] = useState<Member[]>(members);
     
-    // Shuffle members once on initial render
-    const shuffledMembers = useMemo(() => shuffleArray(members), [members]);
+    // Shuffle members only on client side after hydration
+    useEffect(() => {
+        setShuffledMembers(shuffleArray(members));
+    }, [members]);
 
     const filteredMembers = searchQuery
         ? shuffledMembers.filter(member =>
