@@ -51,4 +51,4 @@ Optional fields: `program`, `year`, `instagram`, `twitter`, `linkedin` (use full
 
 ---
 
-Made with ❤️ by UWaterloo students
+made with ❤️ by shayaan, kevin, daniel, casper
