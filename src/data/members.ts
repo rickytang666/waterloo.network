@@ -75,7 +75,7 @@ export const members: Member[] = [
     instagram: "https://instagram.com/shayaan.azeem",
     twitter: "https://x.com/shayaan_azeem",
     linkedin: "https://linkedin.com/in/shayaan-azeem",
-    connections: ["daniel-ching", "fiona-cai"],
+    connections: ["daniel-ching", "fiona-cai", "kevin-thomas"],
   },
   {
     id: "daniel-ching",
