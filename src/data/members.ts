@@ -123,6 +123,18 @@ export const members: Member[] = [
     linkedin: "https://linkedin.com/in/fiona--cai",
     connections: [],
   },
+  {
+    id: "muhib-waqar",
+    name: "Muhib Waqar",
+    website: "https://muhibwaqar.com",
+    program: "Mathematics/Business Administration",
+    year: "2030",
+    profilePic: "/photos/muhib-waqar.jpg",
+    instagram: "https://instagram.com/muhibwqr",
+    twitter: "https://x.com/muhibwqr",
+    linkedin: "https://linkedin.com/muhibwaqar",
+    connections: ["shayaan-azeem"],
+  },
 
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
