@@ -5,7 +5,7 @@ import { Member, Connection } from '@/data/members';
 import MembersTable from './MembersTable';
 import NetworkGraph from './NetworkGraph';
 import AsciiBackground from './AsciiBackground';
-import { Search, Github } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 interface SearchableContentProps {
     members: Member[];
@@ -37,16 +37,6 @@ export default function SearchableContent({ members, connections }: SearchableCo
                 <div className="header-section">
                     <div className="title-row">
                         <h1 className="title">uwaterloo.network</h1>
-                        <a 
-                            href="https://github.com/Shayaan-Azeem/waterloo.network"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="github-link"
-                            title="Add yourself via Pull Request"
-                        >
-                            <Github size={20} />
-                            <span>Join via PR</span>
-                        </a>
                     </div>
                     <div className="description">
                         <p>welcome to the official webring for university of waterloo students.</p>

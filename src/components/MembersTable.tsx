@@ -34,7 +34,6 @@ export default function MembersTable({ members, searchQuery }: MembersTableProps
                     <tr>
                         <th>name</th>
                         <th>program</th>
-                        <th>year</th>
                         <th>site</th>
                         <th>links</th>
                     </tr>
@@ -55,10 +54,20 @@ export default function MembersTable({ members, searchQuery }: MembersTableProps
                                         style={{ backgroundColor: '#e0e0e0' }} 
                                     />
                                 )}
-                                <span>{highlightText(member.name) || 'No name'}</span>
+                                {member.website && member.website.trim() ? (
+                                    <a 
+                                        href={member.website.startsWith('http') ? member.website : `https://${member.website}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="name-link"
+                                    >
+                                        {highlightText(member.name) || 'No name'}
+                                    </a>
+                                ) : (
+                                    <span>{highlightText(member.name) || 'No name'}</span>
+                                )}
                             </td>
                             <td>{highlightText(member.program) || '—'}</td>
-                            <td>{member.year || '—'}</td>
                             <td>
                                 {member.website && member.website.trim() ? (
                                     <a 

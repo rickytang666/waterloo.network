@@ -222,10 +222,9 @@ a {
 }
 
 .members-table th:nth-child(1) { width: 25%; }
-.members-table th:nth-child(2) { width: 25%; }
-.members-table th:nth-child(3) { width: 12%; }
+.members-table th:nth-child(2) { width: 30%; }
+.members-table th:nth-child(3) { width: 25%; }
 .members-table th:nth-child(4) { width: 20%; }
-.members-table th:nth-child(5) { width: 18%; padding-left: 1rem; }
 
 .members-table td {
   padding: 1rem 2rem 1rem 0;
@@ -234,8 +233,8 @@ a {
   vertical-align: middle;
 }
 
-.members-table td:nth-child(5) {
-  padding-left: 1.5rem;
+.members-table td:nth-child(4) {
+  padding-left: 1rem;
   padding-right: 1rem;
 }
 
@@ -272,6 +271,16 @@ a {
 }
 
 .site-link:hover {
+  opacity: 0.7;
+}
+
+.name-link {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.name-link:hover {
   opacity: 0.7;
 }
 
@@ -372,11 +381,9 @@ a {
     max-width: 100%;
   }
   
-  /* Hide program and year columns on tablet */
+  /* Hide program column on tablet */
   .members-table th:nth-child(2),
-  .members-table td:nth-child(2),
-  .members-table th:nth-child(3),
-  .members-table td:nth-child(3) {
+  .members-table td:nth-child(2) {
     display: none;
   }
   
@@ -396,7 +403,7 @@ a {
   }
   
   .ascii-art-background {
-    transform: scale(0.6);
+    transform: scale(1.8);
     opacity: 0.06;
   }
   
@@ -429,8 +436,8 @@ a {
   }
   
   /* Hide site column too on mobile, keep just name and links */
-  .members-table th:nth-child(4),
-  .members-table td:nth-child(4) {
+  .members-table th:nth-child(3),
+  .members-table td:nth-child(3) {
     display: none;
   }
   
@@ -445,7 +452,7 @@ a {
     padding-bottom: 0.75rem;
   }
   
-  .members-table td:nth-child(5) {
+  .members-table td:nth-child(4) {
     padding-left: 0;
   }
   
@@ -469,10 +476,10 @@ a {
   }
   
   .ascii-art-background {
-    transform: scale(0.5);
+    transform: scale(2.2);
     opacity: 0.05;
-    bottom: -10%;
-    right: -10%;
+    bottom: 0%;
+    right: -60%;
   }
   
   .ascii-art-background pre {
