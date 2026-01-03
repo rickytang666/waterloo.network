@@ -72,7 +72,7 @@ export const members: Member[] = [
     program: "Applied Math",
     profilePic: "/photos/shayaan-azeem.jpg",
     instagram: "https://instagram.com/shayaan.azeem",
-    twitter: "https://x.com/shayaan_azeem",
+    twitter: "https://x.com/shayaan",
     linkedin: "https://linkedin.com/in/shayaan-azeem",
     connections: ["daniel-ching", "fiona-cai", "kevin-thomas"],
   },

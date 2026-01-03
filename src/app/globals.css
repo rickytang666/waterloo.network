@@ -217,17 +217,17 @@ a {
   font-weight: 500;
   font-size: 1.2rem;
   padding-bottom: 1.5rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
   color: var(--foreground);
 }
 
-.members-table th:nth-child(1) { width: 25%; }
-.members-table th:nth-child(2) { width: 30%; }
-.members-table th:nth-child(3) { width: 25%; }
-.members-table th:nth-child(4) { width: 20%; }
+.members-table th:nth-child(1) { width: 28%; }
+.members-table th:nth-child(2) { width: 25%; }
+.members-table th:nth-child(3) { width: 27%; }
+.members-table th:nth-child(4) { width: 20%; padding-left: 1rem; }
 
 .members-table td {
-  padding: 1rem 2rem 1rem 0;
+  padding: 1rem 1rem 1rem 0;
   font-size: 1rem;
   color: var(--foreground);
   vertical-align: middle;
@@ -235,7 +235,7 @@ a {
 
 .members-table td:nth-child(4) {
   padding-left: 1rem;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 
 .user-cell {
@@ -381,11 +381,6 @@ a {
     max-width: 100%;
   }
   
-  /* Hide program column on tablet */
-  .members-table th:nth-child(2),
-  .members-table td:nth-child(2) {
-    display: none;
-  }
   
   .members-table {
     table-layout: auto;
@@ -452,8 +447,9 @@ a {
     padding-bottom: 0.75rem;
   }
   
+  .members-table th:nth-child(4),
   .members-table td:nth-child(4) {
-    padding-left: 0;
+    padding-left: 0.5rem;
   }
   
   .avatar {
