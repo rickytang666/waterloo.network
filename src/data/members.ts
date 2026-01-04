@@ -147,6 +147,18 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/aayan-rahman/",
     connections: ["zane-beeai", "shayaan-azeem"],
   },
+  {
+    id: "ibrahim-ansari",
+    name: "Ibrahim Ansari",
+    website: "https://ibrahimansari.ca/",
+    program: "Management Engineering",
+    year: "2030",
+    profilePic: "/photos/ibrahim-ansari.png",
+    instagram: "https://www.instagram.com/ibrahim.ansr/",
+    twitter: "https://x.com/ibrahimansr",
+    linkedin: "https://www.linkedin.com/in/ibrahim-ansari-code/",
+    connections: ["muhib-waqar"],
+  },
 
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
@@ -194,4 +206,3 @@ export function getWebringNavigation(currentWebsite: string): { prev: Member | n
 export function getRandomMember(): Member {
   return members[Math.floor(Math.random() * members.length)];
 }
-
