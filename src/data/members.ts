@@ -199,7 +199,7 @@ export const members: Member[] = [
     website: "https://casperdong.com",
     program: "Knowledge Integration",
     year: "2030",
-    profilePic: "/photos/casper-dong.png",
+    profilePic: "/photos/casper-dong.jpg",
     twitter: "https://x.com/casperkeyidong",
     linkedin: "https://www.linkedin.com/in/casper-dong-64b623207/",
     connections: ["shayaan-azeem", "pranav-marthi", "kevin-thomas"]
