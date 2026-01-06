@@ -127,7 +127,7 @@ export const members: Member[] = [
     id: "muhib-waqar",
     name: "Muhib Waqar",
     website: "https://muhibwaqar.com",
-    program: "Mathematics/Business Administration",
+    program: "Mathematics/Business",
     year: "2030",
     profilePic: "/photos/muhib-waqar.jpg",
     instagram: "https://instagram.com/muhibwqr",
