@@ -204,6 +204,17 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/casper-dong-64b623207/",
     connections: ["shayaan-azeem", "pranav-marthi", "kevin-thomas"]
   },
+  {
+    id: "justin-wu",
+    name: "Justin Wu",
+    website: "https://justinwu.net",
+    program: "Systems Design Engineering",
+    year: "2030",
+    profilePic: "/photos/justin-wu.jpg",
+    twitter: "https://x.com/byjustinwu",
+    linkedin: "https://www.linkedin.com/in/justin-wu-171481162/",
+    connections: ["shayaan-azeem", "daniel-ching", "casper-dong", "kevin-thomas", "aayan-rahman"]
+  },
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
