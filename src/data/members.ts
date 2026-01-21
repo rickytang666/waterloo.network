@@ -227,7 +227,17 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/tony-py-pan/",
     connections: ["shayaan-azeem", "zane-beeai", "pranav-marthi", "casper-dong", "aayan-rahman"]
   },
-
+  {
+    id: "alex-xu",
+    name: "Alex Xu",
+    website: "https://www.alexxu.ca/",
+    program: "Computer Science",
+    year: "2028",
+    profilePic: "/photos/alex-xu.jpg",
+    twitter: "https://x.com/aalex_xu",
+    linkedin: "https://www.linkedin.com/in/alex-xu7/",
+    connections: ["shayaan-azeem"]
+  },
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
