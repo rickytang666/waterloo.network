@@ -238,6 +238,17 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/alex-xu7/",
     connections: ["shayaan-azeem"]
   },
+  {
+    id: "abdullah-rajput",
+    name: "Abdullah Rajput",
+    website: "https://abrj7.github.io/",
+    program: "Software Engineering",
+    year: "2030",
+    profilePic: "/photos/abdullah-rajput.jpeg",
+    twitter: "https://x.com/abdullah_rjpt7",
+    linkedin: "https://www.linkedin.com/in/abdullahrajput1",
+    connections: ["shayaan-azeem", "pranav-marthi", "muhib-waqar"]
+  },
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
