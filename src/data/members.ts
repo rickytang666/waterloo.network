@@ -245,6 +245,7 @@ export const members: Member[] = [
     program: "Software Engineering",
     year: "2030",
     profilePic: "/photos/abdullah-rajput.jpeg",
+    instagram: "https://www.instagram.com/abdullah.rj29/",
     twitter: "https://x.com/abdullah_rjpt7",
     linkedin: "https://www.linkedin.com/in/abdullahrajput1",
     connections: ["shayaan-azeem", "pranav-marthi", "muhib-waqar"]
