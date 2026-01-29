@@ -248,7 +248,7 @@ export const members: Member[] = [
     twitter: "https://x.com/abdullah_rjpt7",
     linkedin: "https://www.linkedin.com/in/abdullahrajput1",
     connections: ["shayaan-azeem", "pranav-marthi", "muhib-waqar"]
-  },
+  }
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
