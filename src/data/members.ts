@@ -261,6 +261,19 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/abdullahrajput1",
     connections: ["shayaan-azeem", "pranav-marthi", "muhib-waqar"]
   },
+  {
+    id: "demir-eren",
+    name: "Demir Eren",
+    website: "https://www.demireren.ca/",
+    program: "Management Engineering",
+    year: "2028",
+    profilePic: "/photos/demir-eren.jpg",
+    instagram: "https://www.instagram.com/demirereno/",
+    twitter: "https://x.com/demireren_",
+    linkedin: "https://www.linkedin.com/in/demireren/",
+    connections: ["shayaan-azeem", "muhib-waqar", 
+      "kevin-thomas", "justin-wu", "casper-dong", "austin-jian", "alex-xu"]
+  },
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
