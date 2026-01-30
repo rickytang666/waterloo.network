@@ -79,7 +79,7 @@ export const members: Member[] = [
   {
     id: "zane-beeai",
     name: "Zane Beeai",
-    website: "https://zane.beeai.com",
+    website: "https://zanebeeai.com/c/waterloo network",
     program: "Biomedical Engineering",
     year: "2030",
     profilePic: "/photos/zane-beeai.png",
@@ -239,6 +239,17 @@ export const members: Member[] = [
     connections: ["shayaan-azeem"]
   },
   {
+    id: "austin-jian",
+    name: "Austin Jian",
+    website: "https://www.austinjian.ca",
+    program: "Computer Science",
+    year: "2030",
+    profilePic: "/photos/austin-jian.jpg",
+    twitter: "https://x.com/austinjian_",
+    linkedin: "https://www.linkedin.com/in/austin-jian",
+    connections: ["shayaan-azeem"]
+  },
+  {
     id: "abdullah-rajput",
     name: "Abdullah Rajput",
     website: "https://abrj7.github.io/",
@@ -249,7 +260,7 @@ export const members: Member[] = [
     twitter: "https://x.com/abdullah_rjpt7",
     linkedin: "https://www.linkedin.com/in/abdullahrajput1",
     connections: ["shayaan-azeem", "pranav-marthi", "muhib-waqar"]
-  }
+  },
   // ============================================
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
