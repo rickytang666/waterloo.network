@@ -75,14 +75,14 @@ export async function GET() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: opacity 0.2s;
+                transition: transform 0.2s, opacity 0.2s;
                 font-size: 24px;
                 padding: 0;
                 line-height: 1;
                 color: \${arrowColor};
             \`;
-            leftArrow.onmouseover = () => leftArrow.style.opacity = '0.7';
-            leftArrow.onmouseout = () => leftArrow.style.opacity = '1';
+            leftArrow.onmouseover = () => { leftArrow.style.transform = 'scale(1.2)'; leftArrow.style.opacity = '0.8'; };
+            leftArrow.onmouseout = () => { leftArrow.style.transform = 'scale(1)'; leftArrow.style.opacity = '1'; };
             
             // Center icon - links to the webring homepage
             const centerLink = document.createElement('a');
@@ -137,14 +137,14 @@ export async function GET() {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: opacity 0.2s;
+                transition: transform 0.2s, opacity 0.2s;
                 font-size: 24px;
                 padding: 0;
                 line-height: 1;
                 color: \${arrowColor};
             \`;
-            rightArrow.onmouseover = () => rightArrow.style.opacity = '0.7';
-            rightArrow.onmouseout = () => rightArrow.style.opacity = '1';
+            rightArrow.onmouseover = () => { rightArrow.style.transform = 'scale(1.2)'; rightArrow.style.opacity = '0.8'; };
+            rightArrow.onmouseout = () => { rightArrow.style.transform = 'scale(1)'; rightArrow.style.opacity = '1'; };
             
             // If there are members to navigate through
             if (data.members && data.members.length > 0) {
