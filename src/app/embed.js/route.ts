@@ -41,29 +41,27 @@ export async function GET() {
             container.id = 'uwaterloo-webring';
             container.className = 'uwaterloo-webring';
             
-            // Build background style
-            let bgStyle = 'background: transparent;';
-            if (embedBackground) {
-                bgStyle = 'background: ' + embedBackground + ';';
-            }
+            // Build container styles based on whether background/border is set
+            const hasBackground = embedBackground || embedBorder;
             
-            // Build border style
-            let borderStyle = 'border: none;';
-            if (embedBorder) {
-                borderStyle = 'border: 2px solid ' + embedBorder + ';';
-            }
-            
-            container.style.cssText = \`
+            let containerStyles = \`
                 display: inline-flex;
                 align-items: center;
                 gap: 12px;
-                padding: 12px;
-                \${bgStyle}
-                border-radius: 12px;
-                \${borderStyle}
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
                 transition: all 0.3s ease;
             \`;
+            
+            if (hasBackground) {
+                containerStyles += \`
+                    padding: 12px;
+                    border-radius: 12px;
+                    background: \${embedBackground || 'transparent'};
+                    border: \${embedBorder ? '2px solid ' + embedBorder : 'none'};
+                \`;
+            }
+            
+            container.style.cssText = containerStyles;
             
             const arrowColor = getArrowColor(embedColor, embedCustomColor);
             
