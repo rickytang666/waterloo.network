@@ -10,6 +10,7 @@
   --card-bg: #f9f9f9;
   --input-bg: #ffffff;
   --hover-bg: #f5f5f5;
+  --hover-color: #2563eb;
 }
 
 [data-theme='dark'] {
@@ -22,6 +23,7 @@
   --card-bg: #141414;
   --input-bg: #1a1a1a;
   --hover-bg: #1f1f1f;
+  --hover-color: #3b82f6;
 }
 
 * {
@@ -129,7 +131,7 @@ a {
 }
 
 .github-link:hover {
-  opacity: 0.8;
+  background: var(--hover-color);
 }
 
 .description {
@@ -149,7 +151,7 @@ a {
 }
 
 .join-link:hover {
-  opacity: 0.7;
+  color: var(--hover-color);
 }
 
 /* Search */
@@ -271,7 +273,7 @@ a {
 }
 
 .site-link:hover {
-  opacity: 0.7;
+  color: var(--hover-color);
 }
 
 .name-link {
@@ -281,7 +283,7 @@ a {
 }
 
 .name-link:hover {
-  opacity: 0.7;
+  color: var(--hover-color);
 }
 
 .table-placeholder {
@@ -319,7 +321,7 @@ a {
 }
 
 .social-icon-link:hover {
-  opacity: 0.6;
+  color: var(--hover-color);
 }
 
 [data-theme='dark'] .social-icon-link svg {
