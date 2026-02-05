@@ -252,7 +252,7 @@ export const members: Member[] = [
   {
     id: "abdullah-rajput",
     name: "Abdullah Rajput",
-    website: "https://abrj7.github.io/",
+    website: "https://abdullahr.com",
     program: "Software Engineering",
     year: "2030",
     profilePic: "/photos/abdullah-rajput.jpeg",
