@@ -286,7 +286,20 @@ export const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/advaithkarthikeyan/",
     connections: ["shayaan-azeem", "muhib-waqar"]
   },
+  {
+    id: "neiloy-chaudhuri",
+    name: "Neiloy Chaudhuri",
+    website: "https://neiloy.me/",
+    program: "Management Engineering",
+    year: "2028",
+    profilePic: "/photos/neiloy-chaudhuri.jpg",
+    instagram: "https://www.instagram.com/_neiloy/",
+    twitter: "https://x.com/_neiloy",
+    linkedin: "https://www.linkedin.com/in/neiloyc/",
+    connections: ["muhib-waqar", "demir-eren"]
+  },
   // ============================================
+
   // ADD YOUR ENTRY ABOVE THIS LINE
   // ============================================
 ];
