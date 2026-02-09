@@ -307,7 +307,7 @@ export const members: Member[] = [
     instagram: "https://instagram.com/parsa.1l",
     twitter: "https://x.com/parsaxa",
     linkedin: "https://linkedin.com/in/parsa-ahmadnezhad",
-    connections: ["kevin-thomas", "shayaan-azeem", "casper-dong", "abdullah-rajput", "pranav-marthi", "ayan-rahman", "fiona-cai"]
+    connections: ["kevin-thomas", "shayaan-azeem", "casper-dong", "abdullah-rajput", "pranav-marthi", "aayan-rahman", "fiona-cai"]
   },
   // ============================================
 
