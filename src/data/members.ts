@@ -420,9 +420,9 @@ export const members: Member[] = [
     program: "Software Engineering",
     year: "2030",
     // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
-    roles: [],
+    roles: ["engineering"],
     // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
-    verticals: [],
+    verticals: ["ai", "saas", "consumer"],
     profilePic: "/photos/ricky-tang.jpg",
     instagram: "https://www.instagram.com/rickytang.dev/",
     twitter: "https://x.com/_rickytang",
