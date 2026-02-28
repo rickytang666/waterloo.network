@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Member, Connection } from '@/data/members';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Member, Connection, ROLE_OPTIONS, VERTICAL_OPTIONS } from '@/data/members';
 import MembersTable from './MembersTable';
 import NetworkGraph from './NetworkGraph';
 import AsciiBackground from './AsciiBackground';
-import { Search } from 'lucide-react';
+import EmbedcheckTable from './EmbedcheckTable';
+import { Search, ChevronDown, ChevronUp, X } from 'lucide-react';
 
-// Fisher-Yates shuffle
 function shuffleArray<T>(array: T[]): T[] {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -17,6 +17,7 @@ function shuffleArray<T>(array: T[]): T[] {
     return shuffled;
 }
 
+
 interface SearchableContentProps {
     members: Member[];
     connections: Connection[];
@@ -25,26 +26,78 @@ interface SearchableContentProps {
 export default function SearchableContent({ members, connections }: SearchableContentProps) {
     const [searchQuery, setSearchQuery] = useState('');
     const [shuffledMembers, setShuffledMembers] = useState<Member[]>(members);
-    
-    // Shuffle members only on client side after hydration
+    const [activeRoles, setActiveRoles] = useState<Set<string>>(new Set());
+    const [activeVerticals, setActiveVerticals] = useState<Set<string>>(new Set());
+    const [showFilters, setShowFilters] = useState(false);
+
     useEffect(() => {
         setShuffledMembers(shuffleArray(members));
     }, [members]);
 
-    const filteredMembers = searchQuery
-        ? shuffledMembers.filter(member =>
-            member.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            member.program?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            member.website?.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-        : shuffledMembers;
+    const hasActiveFilters = activeRoles.size > 0 || activeVerticals.size > 0;
+
+    const toggleRole = (role: string) => {
+        setActiveRoles(prev => {
+            const next = new Set(prev);
+            if (next.has(role)) next.delete(role);
+            else next.add(role);
+            return next;
+        });
+    };
+
+    const toggleVertical = (vertical: string) => {
+        setActiveVerticals(prev => {
+            const next = new Set(prev);
+            if (next.has(vertical)) next.delete(vertical);
+            else next.add(vertical);
+            return next;
+        });
+    };
+
+    const clearAllFilters = () => {
+        setActiveRoles(new Set());
+        setActiveVerticals(new Set());
+        setSearchQuery('');
+    };
+
+    const filteredMembers = useMemo(() => {
+        let result = shuffledMembers;
+
+        if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            result = result.filter(member =>
+                member.name?.toLowerCase().includes(q) ||
+                member.program?.toLowerCase().includes(q) ||
+                member.website?.toLowerCase().includes(q) ||
+                member.roles?.some(r => r.toLowerCase().includes(q)) ||
+                member.verticals?.some(v => v.toLowerCase().includes(q)) ||
+                member.year?.includes(q)
+            );
+        }
+
+        if (activeRoles.size > 0) {
+            result = result.filter(member =>
+                member.roles?.some(r => activeRoles.has(r))
+            );
+        }
+
+        if (activeVerticals.size > 0) {
+            result = result.filter(member =>
+                member.verticals?.some(v => activeVerticals.has(v))
+            );
+        }
+
+        return result;
+    }, [shuffledMembers, searchQuery, activeRoles, activeVerticals]);
 
     const filteredMemberIds = new Set(filteredMembers.map(m => m.id));
-    const filteredConnections = searchQuery
+    const isFiltering = searchQuery || hasActiveFilters;
+    const filteredConnections = isFiltering
         ? connections.filter(conn =>
             filteredMemberIds.has(conn.fromId) && filteredMemberIds.has(conn.toId)
         )
         : connections;
+
 
     return (
         <main className="main-container">
@@ -85,7 +138,7 @@ export default function SearchableContent({ members, connections }: SearchableCo
                     <Search size={18} />
                     <input
                         type="text"
-                        placeholder="Search members..."
+                        placeholder="search members..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="search-input"
@@ -98,13 +151,68 @@ export default function SearchableContent({ members, connections }: SearchableCo
                             Clear
                         </button>
                     )}
+                    <button
+                        className="filters-toggle"
+                        onClick={() => setShowFilters(prev => !prev)}
+                    >
+                        <span>filters</span>
+                        {hasActiveFilters && (
+                            <span className="filter-count">
+                                {activeRoles.size + activeVerticals.size}
+                            </span>
+                        )}
+                        {showFilters ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                    </button>
                 </div>
+
+                {showFilters && (
+                    <div className="filters-panel">
+                        <div className="filter-group">
+                            <span className="filter-label">roles</span>
+                            <div className="filter-tags">
+                                {ROLE_OPTIONS.map(role => (
+                                    <button
+                                        key={role}
+                                        className={`filter-tag ${activeRoles.has(role) ? 'filter-tag-active' : ''}`}
+                                        onClick={() => toggleRole(role)}
+                                    >
+                                        {role}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="filter-group">
+                            <span className="filter-label">verticals</span>
+                            <div className="filter-tags">
+                                {VERTICAL_OPTIONS.map(vertical => (
+                                    <button
+                                        key={vertical}
+                                        className={`filter-tag ${activeVerticals.has(vertical) ? 'filter-tag-active' : ''}`}
+                                        onClick={() => toggleVertical(vertical)}
+                                    >
+                                        {vertical}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {hasActiveFilters && (
+                            <button className="clear-filters-btn" onClick={clearAllFilters}>
+                                <X size={14} />
+                                clear all filters
+                            </button>
+                        )}
+                    </div>
+                )}
+
                 <NetworkGraph 
                     members={members} 
                     connections={connections} 
                     highlightedMemberIds={filteredMembers.map(m => m.id)}
                     searchQuery={searchQuery}
                 />
+                <EmbedcheckTable />
             </div>
         </main>
     );

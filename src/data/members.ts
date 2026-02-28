@@ -15,6 +15,10 @@
  * Optional fields:
  * - program: Your program at UWaterloo
  * - year: Your graduation year
+ * - roles: Tags for what you do (e.g., ["engineering", "design", "writer"])
+ *          Options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+ * - verticals: Tags for industries you're interested in (e.g., ["fintech", "ai", "climate"])
+ *              Options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
  * - profilePic: Path to your photo (see instructions below)
  * - instagram: Full URL to your Instagram profile
  * - twitter: Full URL to your Twitter/X profile
@@ -33,12 +37,24 @@ export interface Member {
   website: string;
   program?: string;
   year?: string;
+  roles?: string[];
+  verticals?: string[];
   profilePic?: string;
   instagram?: string;
   twitter?: string;
   linkedin?: string;
-  connections?: string[]; // IDs of other members you want to connect with
+  connections?: string[];
 }
+
+export const ROLE_OPTIONS = [
+  'engineering', 'design', 'product', 'growth', 'ai/ml', 'research',
+  'hardware', 'quant', 'software', 'finance', 'vc',
+] as const;
+
+export const VERTICAL_OPTIONS = [
+  'fintech', 'ai', 'climate', 'healthcare', 'edtech', 'marketplaces',
+  'robotics', 'defense', 'hard tech', 'saas', 'consumer', 'creator tools',
+] as const;
 
 // Connection type for the network graph
 export interface Connection {
@@ -58,6 +74,10 @@ export const members: Member[] = [
   //   website: "https://johndoe.com",
   //   program: "Computer Science",
   //   year: "2026",
+  //   // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+  //   roles: ["engineering", "design"],
+  //   // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+  //   verticals: ["fintech", "ai"],
   //   profilePic: "/photos/john-doe.jpg",
   //   instagram: "https://instagram.com/johndoe",
   //   twitter: "https://x.com/johndoe",
@@ -70,6 +90,10 @@ export const members: Member[] = [
     name: "Shayaan Azeem",
     website: "https://shayaanazeem.com",
     program: "Applied Math",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: ["engineering", "design", "growth"],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: ["ai", "consumer"],
     profilePic: "/photos/shayaan-azeem.jpg",
     instagram: "https://instagram.com/shayaan.azeem",
     twitter: "https://x.com/shayaan",
@@ -82,6 +106,10 @@ export const members: Member[] = [
     website: "https://zanebeeai.com",
     program: "Biomedical Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/zane-beeai.png",
     instagram: "https://www.instagram.com/zanevsgravity/",
     twitter: "https://x.com/zanebeeai",
@@ -94,6 +122,10 @@ export const members: Member[] = [
     website: "https://danielcwq.com",
     program: "Computer Science",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: ["engineering", "product"],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: ["edtech", "saas"],
     profilePic: "/photos/daniel-ching.png",
     instagram: "https://www.instagram.com/daniel_cwq/",
     twitter: "https://x.com/danielchingwq",
@@ -105,6 +137,10 @@ export const members: Member[] = [
     name: "Kevin Thomas",
     website: "https://kevinjosethomas.com",
     program: "Computer Science",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: ["engineering", "ai/ml"],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: ["ai", "saas"],
     profilePic: "/photos/kevin-thomas.png",
     instagram: "https://instagram.com/kevinjosethomas",
     twitter: "https://x.com/kevinjosethomas",
@@ -117,6 +153,10 @@ export const members: Member[] = [
     website: "https://fiona-cai.vercel.app",
     program: "Computer Science",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/fiona-cai.jpg",
     instagram: "https://instagram.com/fcaiona",
     twitter: "https://x.com/fcaiona",
@@ -129,6 +169,10 @@ export const members: Member[] = [
     website: "https://muhibwaqar.com",
     program: "Math/Business",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/muhib-waqar.jpg",
     instagram: "https://instagram.com/muhibwqr",
     twitter: "https://x.com/muhibwqr",
@@ -141,6 +185,10 @@ export const members: Member[] = [
     website: "https://aayanrahman.me",
     program: "Electrical Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/aayan-rahman.PNG",
     instagram: "https://www.instagram.com/aayanr300/",
     twitter: "https://x.com/aayanr07",
@@ -153,6 +201,10 @@ export const members: Member[] = [
     website: "https://ibrahimansari.ca/",
     program: "Management Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/ibrahim-ansari.png",
     instagram: "https://www.instagram.com/ibrahim.ansr/",
     twitter: "https://x.com/ibrahimansr",
@@ -165,6 +217,10 @@ export const members: Member[] = [
     website: "https://pranavmarthi.com",
     program: "Software Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/pranav-marthi.png",
     instagram: "https://www.instagram.com/pranav.marthi/",
     twitter: "https://x.com/pranavcmarthi",
@@ -177,6 +233,10 @@ export const members: Member[] = [
     website: "https://victor-huang.ca",
     program: "Computer Science",
     year: "2029",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/victor-huang.png",
     instagram: "https://www.instagram.com/vichua061001/",
     linkedin: "https://www.linkedin.com/in/victor-qibin-huang/",
@@ -188,6 +248,10 @@ export const members: Member[] = [
     website: "https://www.avaansh-nanda.com/",
     program: "CFM",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/avaansh-nanda.jpg",
     instagram: "https://www.instagram.com/avaanshnanda/",
     linkedin: "https://www.linkedin.com/in/avaansh-nanda/",
@@ -199,6 +263,10 @@ export const members: Member[] = [
     website: "https://casperdong.com",
     program: "Knowledge Integration",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/casper-dong.jpg",
     twitter: "https://x.com/casperkeyidong",
     linkedin: "https://www.linkedin.com/in/casper-dong-64b623207/",
@@ -210,6 +278,10 @@ export const members: Member[] = [
     website: "https://justinwu.net",
     program: "Systems Design Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/justin-wu.jpg",
     twitter: "https://x.com/byjustinwu",
     linkedin: "https://www.linkedin.com/in/justin-wu-171481162/",
@@ -221,6 +293,10 @@ export const members: Member[] = [
     website: "https://www.tony-pan.com",
     program: "Computer Science",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/tony-pan.jpg",
     instagram: "https://www.instagram.com/7onypan/",
     twitter: "https://x.com/tpypan",
@@ -233,6 +309,10 @@ export const members: Member[] = [
     website: "https://www.alexxu.ca/",
     program: "Computer Science",
     year: "2028",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/alex-xu.jpg",
     twitter: "https://x.com/aalex_xu",
     linkedin: "https://www.linkedin.com/in/alex-xu7/",
@@ -244,6 +324,10 @@ export const members: Member[] = [
     website: "https://www.austinjian.ca",
     program: "Computer Science",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/austin-jian.jpg",
     twitter: "https://x.com/austinjian_",
     linkedin: "https://www.linkedin.com/in/austin-jian",
@@ -255,6 +339,10 @@ export const members: Member[] = [
     website: "https://abdullahr.com",
     program: "Software Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/abdullah-rajput.jpeg",
     instagram: "https://www.instagram.com/abdullah.rj29/",
     twitter: "https://x.com/abdullah_rjpt7",
@@ -267,6 +355,10 @@ export const members: Member[] = [
     website: "https://www.demireren.ca/",
     program: "Management Engineering",
     year: "2028",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/demir-eren.jpg",
     instagram: "https://www.instagram.com/demirereno/",
     twitter: "https://x.com/demireren_",
@@ -280,6 +372,10 @@ export const members: Member[] = [
     website: "https://www.advaith.info/",
     program: "Exchange",
     year: "2026",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/advaith.jpg",
     instagram: "https://www.instagram.com/advaith_12/",
     twitter: "https://x.com/advaith_12",
@@ -292,6 +388,10 @@ export const members: Member[] = [
     website: "https://neiloy.me/",
     program: "Management Engineering",
     year: "2028",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/neiloy-chaudhuri.jpg",
     instagram: "https://www.instagram.com/_neiloy/",
     twitter: "https://x.com/_neiloy",
@@ -303,6 +403,10 @@ export const members: Member[] = [
     name: "Parsa Ahmadnezhad",
     website: "https://parsaa.ca",
     program: "Mathematics",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/parsa.jpg",
     instagram: "https://instagram.com/parsa.1l",
     twitter: "https://x.com/parsaxa",
@@ -315,11 +419,27 @@ export const members: Member[] = [
     website: "https://rickytang.dev",
     program: "Software Engineering",
     year: "2030",
+    // options: engineering, design, product, growth, ai/ml, research, hardware, quant, software, finance, vc
+    roles: [],
+    // options: fintech, ai, climate, healthcare, edtech, marketplaces, robotics, defense, hard tech, saas, consumer, creator tools
+    verticals: [],
     profilePic: "/photos/ricky-tang.jpg",
     instagram: "https://www.instagram.com/rickytang.dev/",
     twitter: "https://x.com/_rickytang",
     linkedin: "https://www.linkedin.com/in/ricky-tang-dev/",
     connections: ["abdullah-rajput", "muhib-waqar"]
+  },
+  {
+    id: "raghav-agarwal",
+    name: "Raghav Agarwal",
+    website: "https://rghv.ca/",
+    program: "Global Business and Digital Arts",
+    roles: ["design", "product"],
+    verticals: [],
+    profilePic: "/photos/raghav-agarwal.png",
+    twitter: "https://x.com/raghaav",
+    linkedin: "https://www.linkedin.com/in/rghv-agrwl/",
+    connections: ["shayaan-azeem", "justin-wu", "casper-dong"],
   },
   // ============================================
 
